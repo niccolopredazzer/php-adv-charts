@@ -15,6 +15,25 @@
 
         <?php include 'database.php'; ?>
 
+        <!-- <script>
+
+        var data = <?php /* echo json_encode($data); */ ?>
+        var mesi = ['Gennaio', 'Febbraio','Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+
+        var ctx = $('#grafico-linea');
+        var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: mesi,
+                datasets: [{
+                    label: 'Vendite',
+                    backgroundColor: 'orange',
+                    borderColor: 'black',
+                    data: data
+                }]
+            }
+        });
+        </script> -->
 
          <script src="js/main.js" charset="utf-8"></script>
     </body>
