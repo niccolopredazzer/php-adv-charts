@@ -11,7 +11,7 @@ $(document).ready(function () {
                 alert('errore');
             }
         });
-    };
+
 
     function graficoLinea(labels, data) {
         var ctx = $('#grafico-linea');
@@ -21,7 +21,7 @@ $(document).ready(function () {
                 labels: labels,
                 datasets: [{
                     label: 'Vendite',
-                    backgroundColor: 'blue',
+                    backgroundColor: 'orange',
                     borderColor: 'black',
                     data: data
                 }]

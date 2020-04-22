@@ -13,7 +13,7 @@
         </div>
 
 
-        <?php include 'database.php'; ?>;
+        <?php include 'database.php'; ?>
 
 
          <script src="js/main.js" charset="utf-8"></script>
