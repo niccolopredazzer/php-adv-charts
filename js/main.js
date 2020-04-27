@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+
+
     //milestone 1
 
     $.ajax({
@@ -32,7 +34,20 @@ $(document).ready(function () {
 
     //milestone 3
 
+    $.ajax({
+        url: 'server3.php',
+        method: 'GET',
+        success: function (data) {
+            var mesi = ['Gennaio', 'Febbraio','Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+            graficoLinea('#grafico-linea-tre', mesi, data.fatturato.data);
+            graficoTorta('#grafico-torta-due', data);
+            graficoTeam('#grafico-team', mesi, data);
 
+        },
+        error: function () {
+            alert('errore')
+        }
+    });
 
     // FUNCTIONS
 
@@ -53,20 +68,55 @@ $(document).ready(function () {
     };
 
     function graficoTorta (index, dataInput) {
-    var sellers = Object.keys(dataInput.fatturato_by_agent.data);
-    var vendite = Object.values(dataInput.fatturato_by_agent.data);
-    var ctx = $(index);
-    new Chart(ctx, {
-        type: "pie",
-        data: {
-            labels: sellers,
-            datasets: [{
-                data: vendite,
-                backgroundColor: ['lightyellow', 'lightblue', 'lightcoral', 'lightgreen']
-            }]
-        },
-    });
-}
+        var sellers = Object.keys(dataInput.fatturato_by_agent.data);
+        var vendite = Object.values(dataInput.fatturato_by_agent.data);
+        var ctx = $(index);
+        new Chart(ctx, {
+            type: "pie",
+            data: {
+                labels: sellers,
+                datasets: [{
+                    data: vendite,
+                    backgroundColor: ['lightyellow', 'lightblue', 'lightcoral', 'lightgreen']
+                }]
+            },
+        });
+    }
+
+    function graficoTeam (index, labels, data) {
+        var ctx = (index);
+        var chart = new Chart(ctx, {
+            type: line,
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Primo Team",
+                    backgroundColor: 'blue',
+                    pointBackgroundColor: 'blue',
+                    data: data.data.Team1
+
+                },
+                {
+                    label: "Secondo team",
+                    backgroundColor: 'red',
+                    pointBackgroundColor: 'red',
+                    data: data.data.Team2
+
+                },
+                {
+                    label: "Terzo team",
+                    backgroundColor:'green',
+                    pointBackgroundColor: green,
+                    data: data.data.Team3
+
+                }
+                ]
+
+            }
+
+        });
+    }
+
 
 
 

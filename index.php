@@ -8,10 +8,15 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     </head>
     <body>
+
+
+
         <div class="container">
+            <p>Prima milestone</p>
             <canvas id="grafico-linea"></canvas>
         </div>
         <div class="container">
+            <p>Seconda milestone</p>
             <div class="secondo-grafico-linea">
                 <canvas id="grafico-linea-due"></canvas>
             </div>
@@ -20,14 +25,30 @@
             </div>
         </div>
         <div class="container">
-            
+
+        </div>
+
+
+
+        <div class="container">
+            <p>Terza milestone</p>
+            <?php if ($level == '' || $level == 'guest') {; ?>
+                <canvas id="grafico-linea-tre"></canvas>
+            <?php } elseif ($level == 'employee') {; ?>
+                <canvas id="grafico-linea-tre"></canvas>
+                <canvas id="grafico-torta-due"></canvas>
+            <?php } elseif ($level == 'clevel') {; ?>
+                <canvas id="grafico-linea-tre"></canvas>
+                <canvas id="grafico-torta-due"></canvas>
+                <canvas id="grafico-team"></canvas>
+            <?php }; ?>
         </div>
 
 
 
         <?php include 'database.php'; ?>
-
         <!-- <script>
+
 
         var data = <?php /* echo json_encode($data); */ ?>
         var mesi = ['Gennaio', 'Febbraio','Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
