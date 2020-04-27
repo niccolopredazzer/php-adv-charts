@@ -11,8 +11,17 @@
         <div class="container">
             <canvas id="grafico-linea"></canvas>
         </div>
+        <div class="container">
+            <div class="secondo-grafico-linea">
+                <canvas id="grafico-linea-due"></canvas>
+            </div>
+            <div class="grafco-a-torta">
+                <canvas id="grafico-torta"></canvas>
+            </div>
+        </div>
 
 
+        
         <?php include 'database.php'; ?>
 
         <!-- <script>
