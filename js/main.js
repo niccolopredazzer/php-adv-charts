@@ -22,7 +22,6 @@ $(document).ready(function () {
         url: 'server2.php',
         method: 'GET',
         success: function (data) {
-
             graficoLinea('#grafico-linea-due', mesi, data.fatturato.data);
             graficoTorta('#grafico-torta', data);
 
@@ -39,7 +38,6 @@ $(document).ready(function () {
         method: 'GET',
         success: function (data) {
             var rawData = data;
-            
             var datiMulti = dataGraficoMulti(rawData);
             graficoLinea('#grafico-linea-tre', mesi, data.fatturato.data);
             graficoTorta('#grafico-torta-due', data);
@@ -97,38 +95,34 @@ $(document).ready(function () {
     }
 
     function graficoTeam (index, labels, data1, data2, data3) {
-        var ctx = (index);
-        var chart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: "Primo Team",
-                    backgroundColor: 'blue',
-                    pointBackgroundColor: 'blue',
-                    data: data1
+       var ctx = $(index);
+       var chart = new Chart(ctx, {
+       type: 'line',
+       data: {
+           labels: labels,
+           datasets: [{
+                   label: 'Team 1',
+                   backgroundColor: 'rgba(232,232,232,0.1)',
+                   borderColor: 'green',
+                   data: data1
+               },
+               {
+                   label: 'Team 2',
+                   backgroundColor: 'rgba(232,232,232,0.3)',
+                   borderColor: 'blue',
+                   data: data2
+               },
+               {
+                   label: 'Team 3',
+                   backgroundColor: 'rgba(232,232,232,0.5)',
+                   borderColor: 'red',
+                   data: data3
+               }
+           ]
+       },
 
-                },
-                {
-                    label: "Secondo team",
-                    backgroundColor: 'red',
-                    pointBackgroundColor: 'red',
-                    data: data2
-
-                },
-                {
-                    label: "Terzo team",
-                    backgroundColor:'green',
-                    pointBackgroundColor: 'green',
-                    data: data3
-
-                }
-                ]
-
-            }
-
-        });
-    }
+   });
+}
 
 
 

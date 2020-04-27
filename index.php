@@ -37,23 +37,27 @@
                 $access = $_GET['level'];
 
             ?>
-            <?php if ($level == 'guest') {; ?>
+
+            <?php if ($access == 'guest') {; ?>
                 <div class="livello-guest">
                     <canvas id="grafico-linea-tre"></canvas>
                 </div>
-            <?php } elseif ($level == 'employee') {; ?>
+            <?php } elseif ($access == 'employee') {; ?>
                 <div class="livello-employee">
                     <canvas id="grafico-linea-tre"></canvas>
                     <canvas id="grafico-torta-due"></canvas>
                 </div>
-            <?php } elseif ($level == 'clevel') {; ?>
+            <?php } elseif ($access == 'clevel') {; ?>
                 <div class="livello-clevel">
                     <canvas id="grafico-linea-tre"></canvas>
                     <canvas id="grafico-torta-due"></canvas>
                     <canvas id="grafico-team"></canvas>
-                </div>
+
             <?php }; ?>
         </div>
+
+        </div>
+
 
 
 
