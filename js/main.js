@@ -42,7 +42,6 @@ $(document).ready(function () {
             graficoLinea('#grafico-linea-tre', mesi, data.fatturato.data);
             graficoTorta('#grafico-torta-due', data);
             graficoTeam('#grafico-team', mesi, data);
-
         },
         error: function () {
             alert('errore')
@@ -71,7 +70,7 @@ $(document).ready(function () {
         var sellers = Object.keys(dataInput.fatturato_by_agent.data);
         var vendite = Object.values(dataInput.fatturato_by_agent.data);
         var ctx = $(index);
-        new Chart(ctx, {
+        var chart = new Chart(ctx, {
             type: "pie",
             data: {
                 labels: sellers,
@@ -86,28 +85,28 @@ $(document).ready(function () {
     function graficoTeam (index, labels, data) {
         var ctx = (index);
         var chart = new Chart(ctx, {
-            type: line,
+            type: 'line',
             data: {
                 labels: labels,
                 datasets: [{
                     label: "Primo Team",
                     backgroundColor: 'blue',
                     pointBackgroundColor: 'blue',
-                    data: data.data.Team1
+                    data: data.Team1.data
 
                 },
                 {
                     label: "Secondo team",
                     backgroundColor: 'red',
                     pointBackgroundColor: 'red',
-                    data: data.data.Team2
+                    data: data.Team2.data
 
                 },
                 {
                     label: "Terzo team",
                     backgroundColor:'green',
-                    pointBackgroundColor: green,
-                    data: data.data.Team3
+                    pointBackgroundColor: 'green',
+                    data: data.Team3.data
 
                 }
                 ]

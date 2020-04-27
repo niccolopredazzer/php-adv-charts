@@ -32,7 +32,12 @@
 
         <div class="container">
             <p>Terza milestone</p>
-            <?php if ($level == '' || $level == 'guest') {; ?>
+            <?php
+
+                $access = $_GET['level'];
+
+            ?>
+            <?php if ($level == 'guest') {; ?>
                 <canvas id="grafico-linea-tre"></canvas>
             <?php } elseif ($level == 'employee') {; ?>
                 <canvas id="grafico-linea-tre"></canvas>
