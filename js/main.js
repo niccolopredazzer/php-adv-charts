@@ -21,7 +21,7 @@ $(document).ready(function () {
         method: 'GET',
         success: function (data) {
             var mesi = ['Gennaio', 'Febbraio','Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
-            graficoLinea('#grafico-linea-due', mesi, data);
+            graficoLinea('#grafico-linea-due', mesi, data.fatturato.data);
             graficoTorta('#grafico-torta', data);
 
         },
@@ -29,6 +29,10 @@ $(document).ready(function () {
             alert('errore')
         }
     });
+
+    //milestone 3
+
+
 
     // FUNCTIONS
 
@@ -39,7 +43,7 @@ $(document).ready(function () {
             data: {
                 labels: labels,
                 datasets: [{
-                    label: 'Vendite',
+                    label: 'primo-venidte',
                     backgroundColor: 'orange',
                     borderColor: 'black',
                     data: data
