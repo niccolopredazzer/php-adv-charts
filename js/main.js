@@ -43,7 +43,7 @@ $(document).ready(function () {
             data: {
                 labels: labels,
                 datasets: [{
-                    label: 'primo-venidte',
+                    label: 'vendite per mese',
                     backgroundColor: 'orange',
                     borderColor: 'black',
                     data: data
