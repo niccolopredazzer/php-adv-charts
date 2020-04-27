@@ -52,9 +52,11 @@
                     <canvas id="grafico-linea-tre"></canvas>
                     <canvas id="grafico-torta-due"></canvas>
                     <canvas id="grafico-team"></canvas>
-
+                </div>
+            <?php } else {; ?>
+                <h2>Per favore specifica un level</h2>
             <?php }; ?>
-        </div>
+
 
         </div>
 
