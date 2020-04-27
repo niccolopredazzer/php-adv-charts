@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-
+    var mesi = ['Gennaio', 'Febbraio','Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
 
     //milestone 1
 
@@ -8,7 +8,7 @@ $(document).ready(function () {
             url: 'server.php',
             method: 'GET',
             success: function (data) {
-                var mesi = ['Gennaio', 'Febbraio','Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+
                 graficoLinea('#grafico-linea', mesi, data);
             },
             error: function () {
@@ -22,7 +22,7 @@ $(document).ready(function () {
         url: 'server2.php',
         method: 'GET',
         success: function (data) {
-            var mesi = ['Gennaio', 'Febbraio','Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+
             graficoLinea('#grafico-linea-due', mesi, data.fatturato.data);
             graficoTorta('#grafico-torta', data);
 
@@ -39,7 +39,7 @@ $(document).ready(function () {
         method: 'GET',
         success: function (data) {
             var rawData = data;
-            var mesi = ['Gennaio', 'Febbraio','Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+            
             var datiMulti = dataGraficoMulti(rawData);
             graficoLinea('#grafico-linea-tre', mesi, data.fatturato.data);
             graficoTorta('#grafico-torta-due', data);

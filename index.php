@@ -38,14 +38,20 @@
 
             ?>
             <?php if ($level == 'guest') {; ?>
-                <canvas id="grafico-linea-tre"></canvas>
+                <div class="livello-guest">
+                    <canvas id="grafico-linea-tre"></canvas>
+                </div>
             <?php } elseif ($level == 'employee') {; ?>
-                <canvas id="grafico-linea-tre"></canvas>
-                <canvas id="grafico-torta-due"></canvas>
+                <div class="livello-employee">
+                    <canvas id="grafico-linea-tre"></canvas>
+                    <canvas id="grafico-torta-due"></canvas>
+                </div>
             <?php } elseif ($level == 'clevel') {; ?>
-                <canvas id="grafico-linea-tre"></canvas>
-                <canvas id="grafico-torta-due"></canvas>
-                <canvas id="grafico-team"></canvas>
+                <div class="livello-clevel">
+                    <canvas id="grafico-linea-tre"></canvas>
+                    <canvas id="grafico-torta-due"></canvas>
+                    <canvas id="grafico-team"></canvas>
+                </div>
             <?php }; ?>
         </div>
 
